@@ -1,9 +1,12 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+import express from "express";
+import mysql from "mysql2";
+import cors from "cors";
+import pkg from "google-auth-library";
 
-const express = require "express";
-const mysql = require "mysql2";
-const cors = require "cors";
-const { OAuth2Client } = require("google-auth-library");
+const { OAuth2Client } = pkg;
+
+dotenv.config();
 
 const app = express();
 const port = Number(process.env.PORT || 5000);

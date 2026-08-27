@@ -1,8 +1,8 @@
 require("dotenv").config();
 
-const express = require("express");
-const mysql = require("mysql2");
-const cors = require("cors");
+const express = require "express";
+const mysql = require "mysql2";
+const cors = require "cors";
 const { OAuth2Client } = require("google-auth-library");
 
 const app = express();

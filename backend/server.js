@@ -23,7 +23,7 @@ const db = mysql.createPool({
   user: process.DB-USER,
   password: process.env.DB-PASSWORD,   // ✅ matches .env
   database: process.env.DB-NAME,   // ✅ use env variable
-  connectionLimit: 10              // ✅ no stray text
+  connectionLimit: 10,              // ✅ no stray text
 })
 
 .promise();

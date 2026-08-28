@@ -21,7 +21,7 @@ const db = mysql.createPool({
   host: process.env.mysql.railway.internal,
   port: Number(process.env.DB-PORT),
   user: process.env.root,
-  password: process.env.123456,   // ✅ matches .env
+  password: process.env.DB-PASSWORD,   // ✅ matches .env
   database: process.env.gas_sho_db,   // ✅ use env variable
   connectionLimit: 10              // ✅ no stray text
 })

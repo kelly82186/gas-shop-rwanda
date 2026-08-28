@@ -24,10 +24,7 @@ const db = mysql.createPool({
   database: process.env.DB_NAME,
   connectionLimit: 10
 });
-
-});
-
-}).promise();
+.promise();
 
 app.get("/health", async (req, res) => {
   try {

@@ -24,7 +24,7 @@ const db = mysql.createPool({
   password: process.env.DB_PASS,    // ✅ 123456
   database: process.env.DB_NAME,    // ✅ gas_shop_db
   connectionLimit: 10
-});
+})
 
 
 .promise();

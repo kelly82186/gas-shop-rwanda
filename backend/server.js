@@ -23,7 +23,7 @@ const db = mysql.createPool({
   password: process.env.DB_PASS,   // ✅ matches .env
   database: process.env.DB_NAME,
   connectionLimit: 10
-});
+})
 .promise();
 
 app.get("/health", async (req, res) => {

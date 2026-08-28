@@ -21,7 +21,7 @@ const db = mysql.createPool({
   host: process.env.DB_HOST,        // ✅ altaria.proxy.rlwy.net
   port: Number(process.env.DB_PORT),// ✅ 3306
   user: process.env.DB_USER,        // ✅ root
-  password: process.env.DB_PASS,    // ✅ 123456
+  password: process.env.DB_PASSWORD,    // ✅ 123456
   database: process.env.DB_NAME,    // ✅ gas_shop_db
   connectionLimit: 10
 })
@@ -36,7 +36,9 @@ app.listen(port, async () => {
     console.log(`Server running on port ${port}`);
   } catch (error) {
     console.error(
-      "Database connection failed:",
+  `Database connection failed for ${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}:`,
+  error.code || error.message
+);
       process.env.DB_HOST,
       process.env.DB_PORT,
       process.env.DB_NAME,

@@ -14,17 +14,18 @@ const port = Number(process.env.PORT || 5000);
 console.log("ENV CHECK:");
 console.log("DB_HOST:", process.env.DB_HOST);
 console.log("DB_PORT:", process.env.DB_PORT);
-console.log("DB_USER:", process.env.root);
-console.log("DB_NAME:", process.env.gas_sho_db);
+console.log("DB_USER:", process.env.DB_USER);   // ✅ correct
+console.log("DB_NAME:", process.env.DB_NAME);   // ✅ correct
 
 const db = mysql.createPool({
-  host: process.env.mysql.railway.internal,
-  port: Number(process.env.DB_PORT),
-  user: process.DB_USER,
-  password: process.env.DB_PASSWORD,   // ✅ matches .env
-  database: process.env.DB_NAME,   // ✅ use env variable
-  connectionLimit: 10,              // ✅ no stray text
-})
+  host: process.env.DB_HOST,        // ✅ altaria.proxy.rlwy.net
+  port: Number(process.env.DB_PORT),// ✅ 3306
+  user: process.env.DB_USER,        // ✅ root
+  password: process.env.DB_PASS,    // ✅ 123456
+  database: process.env.DB_NAME,    // ✅ gas_shop_db
+  connectionLimit: 10
+});
+
 
 .promise();
 

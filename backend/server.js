@@ -27,10 +27,14 @@ const db = mysql.createPool({
 .promise();
 
 app.get("/health", async (req, res) => {
-  try {
+ try {
     await db.query("SELECT 1");
-    res.json({ status: "ok", database: databaseName });
-  } catch {
+    res.json({ status: "ok", database: process.env.DB_NAME });
+  } catch (error) {
+    console.error(
+      `Database connection failed for ${process.env.DB_HOST || "localhost"}:${process.env.DB_PORT || 3306}/${process.env.DB_NAME || "unknown"}:`,
+      error.code || error.message
+    );
     res.status(500).json({ error: "Database unavailable" });
   }
 });

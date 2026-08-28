@@ -32,6 +32,9 @@ const db = mysql.createPool({
 
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.send("🔥 Gas Shop API is running...");
+});
 
 // ✅ TEST ROUTE
 app.get("/health", async (req, res) => {

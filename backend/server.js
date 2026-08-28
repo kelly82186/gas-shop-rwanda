@@ -35,7 +35,7 @@ app.get("/health", async (req, res) => {
     res.json({ status: "ok", database: process.env.DB_NAME });
   } catch (error) {
     console.error(
-      `Database connection failed for ${process.env.DB_HOST || "localhost"}:${process.env.DB_PORT || 3306}/${process.env.DB_NAME || "unknown"}:`,
+      console.error(`Database connection failed for ${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}:`, error.code || error.message);
       error.code || error.message
     );
     res.status(500).json({ error: "Database unavailable" });

@@ -19,7 +19,7 @@ console.log("DB_NAME:", process.env.DB_NAME);
 
 const db = mysql.createPool({
   host: process.env.mysql.railway.internal,
-  port: Number(process.env.3306),
+  port: Number(process.env.DB-PORT),
   user: process.env.root,
   password: process.env.123456,   // ✅ matches .env
   database: process.env.gas_sho_db,   // ✅ use env variable

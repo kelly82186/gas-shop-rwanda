@@ -3,10 +3,10 @@ import express from "express";
 import mysql from "mysql2";
 import cors from "cors";
 import pkg from "google-auth-library";
+dotenv.config();
 
 const { OAuth2Client } = pkg;
-
-dotenv.config();
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const app = express();
 const port = Number(process.env.PORT || 5000);

@@ -10,6 +10,7 @@ const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const app = express();
 const port = Number(process.env.PORT || 5000);
+
 console.log("ENV CHECK:");
 console.log("DB_HOST:", process.env.DB_HOST);
 console.log("DB_PORT:", process.env.DB_PORT);
@@ -21,9 +22,10 @@ const db = mysql.createPool({
   port: Number(process.env.DB_PORT),
   user: process.env.DB_USER,
   password: process.env.DB_PASS,   // ✅ matches .env
-  database: process.env.DB_NAME,
-  connectionLimit: 10
-})
+  database: process.env.DB_NAME,   // ✅ use env variable
+  connectionLimit: 10              // ✅ no stray text
+});
+
 .promise();
 
 app.get("/health", async (req, res) => {

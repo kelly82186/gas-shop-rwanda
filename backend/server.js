@@ -13,7 +13,7 @@ const port = Number(process.env.PORT || 5000);
 
 console.log("ENV CHECK:");
 console.log("DB_HOST:", process.env.mysql.railway.internal);
-console.log("DB_PORT:", process.env.3306);
+console.log("DB_PORT:", process.env.DB-PORT);
 console.log("DB_USER:", process.env.root);
 console.log("DB_NAME:", process.env.gas_sho_db);
 

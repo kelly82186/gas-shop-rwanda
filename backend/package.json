@@ -1,22 +1,17 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "gas-shop-frontend",
+  "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
   "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^16.0.0",
-    "express": "^5.2.1",
-    "google-auth-library": "^11.0.2",
-    "mysql2": "^3.23.4",
-    "nodemailer": "^9.0.5"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
   }
 }

@@ -128,9 +128,10 @@ app.get("/products", async (req, res) => {
   try {
     const [products] = await db.query("SELECT * FROM products ORDER BY id DESC");
     res.json(products);
-  } catch {
-    res.status(500).json({ error: "Cannot load products" });
-  }
+  } catch (error) {
+  console.error("🔥 PRODUCTS ERROR:", error);
+  res.status(500).json({ error: "Cannot load products" });
+}
 });
 
 app.post("/products", async (req, res) => {
